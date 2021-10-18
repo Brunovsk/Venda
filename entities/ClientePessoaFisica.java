@@ -1,8 +1,10 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ClientePessoaFisica extends Cliente {
+	SimpleDateFormat sdf = new SimpleDateFormat ("dd/mm/yyyy");
 	
 	private String nome;
 	private Date dataNascimento;
@@ -33,6 +35,14 @@ public class ClientePessoaFisica extends Cliente {
 
 	public String getCpf() {
 		return cpf;
+	}
+	
+	public String toString() {
+		return endereco.toString() 
+				+ ", " +sdf.format(getDataCadastro())
+				+ ", "+nome
+				+ ", "+sdf.format(dataNascimento)
+				+ ", "+cpf;
 	}
 
 

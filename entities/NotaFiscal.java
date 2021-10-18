@@ -5,6 +5,9 @@ import java.util.Date;
 public class NotaFiscal extends Documento {
 	
 	private Double valorTotalImpostos;
+	
+	public NotaFiscal() {
+	}
 
 	public NotaFiscal(Date dataEmissao, String tipo, Double valorTotal, boolean emitido, Cliente cliente,
 			String enderecoDeEntrega, Double valorTotalImpostos) {
@@ -30,6 +33,17 @@ public class NotaFiscal extends Documento {
 					+"CLIENTE DADOS:" + getCliente().getDataCadastro()+","+getCliente().getEndereco()+"\n"
 					+"ENDEREÇO DE ENTREGA: "+ getEnderecoDeEntrega());
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return sdf.format(getDataEmissao())+
+				", "+getTipo()+
+				", "+getValorTotal()+
+				", "+ isEmitido()+
+				", "+cliente.toString()+
+				", "+getEnderecoDeEntrega()+
+				", "+getValorTotalImpostos();
 	}
 
 }

@@ -1,8 +1,10 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ClientePessoaJuridica extends Cliente {
+	SimpleDateFormat sdf = new SimpleDateFormat ("dd/mm/yyyy");
 	
 	private String razaoSocial;
 	private String fantasia;
@@ -44,6 +46,15 @@ public class ClientePessoaJuridica extends Cliente {
 
 	public Date getDataRegistro() {
 		return dataRegistro;
+	}
+	
+	public String toString() {
+		return endereco.toString()
+				+", "+sdf.format(dataCadastro)
+				+", "+razaoSocial
+				+", "+fantasia
+				+", "+cnpj
+				+", "+sdf.format(dataRegistro);
 	}
 
 }

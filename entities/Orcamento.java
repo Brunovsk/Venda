@@ -8,6 +8,9 @@ public class Orcamento extends Documento{
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyy");
 	
 	private Date dataValidade;
+	
+	public Orcamento() {
+	}
 
 	public Orcamento(Date dataEmissao, String tipo, Double valorTotal, boolean emitido, Cliente cliente,
 			String enderecoDeEntrega, Date dataValidade) {
@@ -37,6 +40,17 @@ public class Orcamento extends Documento{
 					+"CLIENTE DADOS:" + getCliente().getDataCadastro()+","+getCliente().getEndereco()+"\n"
 					+"ENDEREÇO DE ENTREGA: "+ getEnderecoDeEntrega());
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return sdf.format(getDataEmissao())+
+				", "+getTipo()+
+				", "+getValorTotal()+
+				", "+ isEmitido()+
+				", "+cliente.toString()+
+				", "+getEnderecoDeEntrega()+
+				", "+sdf.format(getDataValidade());
 	}
 
 }

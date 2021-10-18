@@ -11,7 +11,7 @@ public class Documento {
 	private String tipo;
 	private Double valorTotal;
 	private boolean emitido;
-	private Cliente cliente;
+	protected Cliente cliente;
 	private String enderecoDeEntrega;
 	
 	public Documento() {
@@ -79,6 +79,16 @@ public class Documento {
 				+"FOI EMTIDO?: "+ isEmitido()+"\n"
 				+"CLIENTE DADOS:" + cliente.getDataCadastro()+","+cliente.getEndereco()+"\n"
 				+"ENDEREÇO DE ENTREGA: "+ getEnderecoDeEntrega());
+	}
+
+	@Override
+	public String toString() {
+		return sdf.format(getDataEmissao())+
+				", "+getTipo()+
+				", "+getValorTotal()+
+				", "+ isEmitido()+
+				", "+cliente.toString()+
+				", "+getEnderecoDeEntrega();
 	}
 	
 	

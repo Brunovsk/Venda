@@ -57,7 +57,15 @@ public class Endereco {
 		", "+getEstado();
 	}
 	
-	
+	public static Endereco addEndereco(String logradouro, String bairro, String cidade, String estado) {
+		Endereco endereco = new Endereco();
+		endereco.logradouro = logradouro;
+		endereco.bairro = bairro;
+		endereco.cidade = cidade;
+		endereco.estado = estado;
+		return endereco;
+		
+	}
 	
 	
 

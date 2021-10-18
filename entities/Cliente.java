@@ -1,11 +1,14 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Cliente {
 	
-	private Endereco endereco;
-	private Date dataCadastro;
+	SimpleDateFormat sdf = new SimpleDateFormat ("dd/mm/yyyy");
+	
+	protected Endereco endereco;
+	protected Date dataCadastro;
 
 	public Cliente() {
 	}
@@ -35,8 +38,10 @@ public class Cliente {
 		this.dataCadastro = dataCadastro;
 	}
 	
-	
-	
+	public String toString() {
+		return endereco.toString() 
+				+ ", " +sdf.format(getDataCadastro());
+	}
 	
 
 }
